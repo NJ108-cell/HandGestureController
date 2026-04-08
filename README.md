@@ -12,9 +12,10 @@
 
 <br/>
 
+<!-- 2D / gesture themed GIFs -->
 <img src="https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" width="220" alt="2D hand wave animation" />
-<img src="https://media.giphy.com/media/3o7btPCcdNni6wl7Co/giphy.gif" width="220" alt="scrolling animation" />
-<img src="https://media.giphy.com/media/26FPJGjhefSJuaRhu/giphy.gif" width="220" alt="volume control animation" />
+<img src="https://media.giphy.com/media/26FPJGjhefSJuaRhu/giphy.gif" width="220" alt="cursor control animation" />
+<img src="https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif" width="220" alt="scroll / interaction animation" />
 
 </div>
 
@@ -190,7 +191,7 @@ python main.py
 ## 🔐 Limitations
 
 - Works best with **a single hand** visible in the frame.  
-- Volume control currently **Windows-only** (Py caw).  
+- Volume control currently **Windows-only** (Pycaw).  
 - Strong backlight or cluttered backgrounds can reduce accuracy.  
 - Designed for desktop usage, not mobile.
 
