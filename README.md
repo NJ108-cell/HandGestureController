@@ -12,10 +12,8 @@
 
 <br/>
 
-<!-- 2D / gesture themed GIFs -->
-<img src="https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" width="220" alt="2D hand wave animation" />
-<img src="https://media.giphy.com/media/26FPJGjhefSJuaRhu/giphy.gif" width="220" alt="cursor control animation" />
-<img src="https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif" width="220" alt="scroll / interaction animation" />
+<!-- Snowy / particle background aesthetic -->
+<img src="https://images.pexels.com/photos/11467480/pexels-photo-11467480.jpeg?auto=compress&cs=tinysrgb&w=1200" width="100%" alt="snowy abstract background" />
 
 </div>
 
@@ -204,7 +202,7 @@ python main.py
 - Mac/Linux-compatible audio control.  
 - Per-user **gesture customization** and profiles.  
 - ML-based gesture learning (train your own gestures).  
-- Improved 2D overlay animations (icons following hand, dynamic UI hints).
+- Enhanced overlays with dynamic 2D effects.
 
 ---
 
