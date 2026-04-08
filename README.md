@@ -1,145 +1,236 @@
-🖐️ AI Virtual Hand Gesture Controller
-A real-time Hand Gesture Recognition System built using OpenCV, MediaPipe, and PyAutoGUI that allows you to control your computer using hand gestures.
+<div align="center">
 
-This project enables:
-🖱️ Cursor movement
-🔊 Volume control
-📜 Scrolling
+# 🖐️ AI Virtual Hand Gesture Controller  
 
-👆 Left & Right Click
-All without touching your mouse or keyboard.
+### Control your computer with 2D-animated hand gestures — no mouse, no keyboard, just motion.
 
-🚀 Project Overview
-This system uses your webcam to detect hand landmarks and interpret specific finger combinations as commands.
-The program:
-Detects hand landmarks using MediaPipe
-Identifies finger positions
-Maps gestures to system actions
-Controls mouse and volume in real time
-It is optimized with smoothing techniques to provide stable cursor movement.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-Real--Time%20Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand%20Tracking-EF5B25?style=for-the-badge)
+![PyAutoGUI](https://img.shields.io/badge/System-Control-222222?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Desktop-16a34a?style=for-the-badge)
 
-🧠 Features
-✅ Real-Time Hand Tracking
-Uses MediaPipe Hands solution
-Tracks up to 1 hand
-High detection and tracking confidence
+<br/>
 
-✅ Cursor Control Mode
-Move mouse pointer using index finger
-Smoothened movement using interpolation
-Left click using thumb pinch
-Right click using pinky pinch
+<img src="https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" width="220" alt="2D hand wave animation" />
+<img src="https://media.giphy.com/media/3o7btPCcdNni6wl7Co/giphy.gif" width="220" alt="scrolling animation" />
+<img src="https://media.giphy.com/media/26FPJGjhefSJuaRhu/giphy.gif" width="220" alt="volume control animation" />
 
-✅ Volume Control Mode
-Adjust system volume using distance between thumb and index finger
-Real-time volume bar display
-Smooth volume transition
+</div>
 
-✅ Scroll Mode
-Scroll up/down using two-finger vertical gesture
-Scroll direction detection
-Scroll readiness detection
+---
 
-✅ FPS Display
-Real-time performance monitoring
-🛠️ Technologies Used
-Python 3.x
-OpenCV
-MediaPipe
-NumPy
-PyAutoGUI
-Pycaw (Windows Volume Control)
-Comtypes
+## 🧩 Overview
 
-📂 Project Structure
-📦 Hand Gesture Controller
- ┣ 📜 HandTrackingModule.py
- ┣ 📜 main.py
- ┗ 📜 README.md
- 
-🔹 HandTrackingModule.py
-Contains the HandDetector class:
-Detects hands
-Extracts landmark positions
-Draws hand connections
+**AI Virtual Hand Gesture Controller** is a real-time gesture recognition system that lets you control your computer using only your hand in front of a webcam. It uses **OpenCV**, **MediaPipe**, and **PyAutoGUI** to translate natural finger positions into system actions like cursor movement, clicks, scrolling, and volume control.
 
-🔹 main.py
-Main controller logic:
-Gesture detection
-Mode switching
-Volume control
-Cursor control
-Scroll control
+The goal is to showcase **AI-driven human–computer interaction** with a smooth, responsive, and visually intuitive flow — like a 2D animated control layer on top of your desktop.
 
-✋ Gesture Controls
-Gesture	Action
-✊ All fingers closed	Neutral mode
-☝ Index finger up	Scroll Mode
-👍 Thumb + Index up	Volume Mode
-✋ All fingers open	Cursor Mode
-🤏 Thumb pinch	Left Click
-🤏 Pinky pinch	Right Click
-⚙️ Installation Guide
-1️⃣ Clone the Repository
+---
+
+## 🧠 Core Capabilities
+
+- 🖱️ **Cursor movement** using your index finger.
+- 👆 **Left & Right clicks** using pinch gestures.
+- 📜 **Smooth scrolling** using vertical two-finger gestures.
+- 🔊 **Volume control** using the distance between fingers (Windows, via Pycaw).
+- 🎛️ **Mode-specific behavior** for navigation, scrolling, and audio control.
+- 📉 **FPS overlay** to monitor real-time performance.
+
+---
+
+## 🛠 Technologies Used
+
+| Component           | Technology          |
+|--------------------|---------------------|
+| Hand Detection     | MediaPipe Hands     |
+| Computer Vision    | OpenCV             |
+| System Control     | PyAutoGUI, Pycaw   |
+| Math / Arrays      | NumPy              |
+| OS Audio (Windows) | Pycaw, comtypes    |
+| Language           | Python 3.x         |
+
+---
+
+## 🧱 Project Structure
+
+```bash
+Hand-Gesture-Controller/
+├── HandTrackingModule.py   # Hand detection & landmark utilities
+├── main.py                 # Gesture logic and system control
+└── README.md
+```
+
+---
+
+## 🧠 Feature Breakdown
+
+### ✅ Real-Time Hand Tracking
+- Uses **MediaPipe Hands** to detect 21 key landmarks.  
+- Tracks up to **one hand** with configurable detection and tracking confidence.  
+- Draws connections for clear visual feedback.
+
+### ✅ Cursor Control Mode
+- Move the mouse pointer using the **index finger tip**.  
+- Coordinate mapping from camera space → screen space.  
+- **Smoothing / interpolation** reduces jitter for a stable 2D cursor animation.  
+- **Left click** with thumb–index pinch.  
+- **Right click** with thumb–pinky pinch (configurable).
+
+### ✅ Volume Control Mode (Windows)
+- Uses **thumb–index distance** as a volume slider.  
+- Mapped to system audio range with interpolation.  
+- Visual volume bar overlay for feedback.  
+- Powered by **Pycaw** and **comtypes**.
+
+### ✅ Scroll Mode
+- Two-finger vertical movement = scroll gesture.  
+- Scroll direction (up/down) detected from relative finger movement.  
+- Scroll “readiness” logic to avoid accidental scrolling.
+
+### ✅ Performance Overlay
+- FPS display rendered on the frame.  
+- Tunable detection and tracking confidence.  
+- Adjustable smoothing factor for motion.
+
+---
+
+## ✋ Gesture Controls
+
+| Gesture                    | Action           |
+|---------------------------|------------------|
+| ✊ All fingers closed      | Neutral / Idle   |
+| ☝ Index finger up         | Scroll Mode      |
+| 👍 Thumb + Index up       | Volume Mode      |
+| ✋ All fingers open        | Cursor Mode      |
+| 🤏 Thumb pinch            | Left Click       |
+| 🤏 Pinky pinch            | Right Click      |
+
+> These gestures can be extended or customized in `main.py`.
+
+---
+
+## ⚙️ Installation Guide
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/your-username/hand-gesture-controller.git
 cd hand-gesture-controller
-2️⃣ Install Dependencies
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
 pip install opencv-python mediapipe numpy pyautogui pycaw comtypes
+```
 
-⚠️ Pycaw works only on Windows for volume control.
+> ⚠️ **Note:** Pycaw-based volume control works only on **Windows**.
 
-▶️ How to Run
+---
+
+## ▶️ How to Run
+
+```bash
 python main.py
+```
 
-Press Q to exit the application.
+- The app opens a webcam window.  
+- Perform gestures in front of the camera.  
+- Press **Q** to exit.
 
-🎯 How It Works
-Hand Detection
-Converts frame to RGB
-Processes using MediaPipe Hands
-Extracts 21 landmark points
-Gesture Recognition
-Detects finger states (open/closed)
-Matches specific combinations
-Activates corresponding mode
-Cursor Mapping
-Maps camera coordinates to screen resolution
-Applies smoothing factor to reduce jitter
-Uses PyAutoGUI for system control
-Volume Mapping
-Measures thumb-index distance
-Interpolates to system volume range
-Updates system audio endpoint
+---
 
-📈 Performance Optimization
-Adjustable detection confidence
-Adjustable tracking confidence
-Cursor smoothing factor
-FPS monitoring
+## 🎯 How It Works (High Level)
 
-🖥️ System Requirements
-Windows OS (for volume feature)
-Webcam
-Python 3.7+
+1. **Hand Detection**
+   - Capture frame → convert to RGB.  
+   - Process with **MediaPipe Hands**.  
+   - Extract 21 landmark points per detected hand.
 
-Good lighting conditions
+2. **Gesture Recognition**
+   - Determine which fingers are up/down.  
+   - Match patterns to predefined gesture states.  
+   - Switch between **Cursor**, **Scroll**, **Volume**, and **Neutral** modes.
 
-🔐 Limitations
-Works best with single hand
-Volume control only supported on Windows
-Requires good lighting
-Background clutter may reduce accuracy
+3. **Cursor Mapping**
+   - Map landmark coordinates from camera resolution to **screen resolution**.  
+   - Apply smoothing:  
+     \- New position = previous + (current - previous) / smoothing factor.  
+   - Use **PyAutoGUI** to move the cursor and trigger clicks.
 
-📌 Future Improvements
-Multi-hand support
-Gesture customization
-Mac/Linux volume control support
-GUI interface
-AI-based gesture learning
+4. **Volume Mapping (Windows)**
+   - Measure thumb–index distance.  
+   - Interpolate to system volume range via Pycaw.  
+   - Update system master volume in real-time.
 
-🤝 Contributing
+---
+
+## 📈 Performance Tuning
+
+- **Detection confidence**: adjust for more stable or more sensitive detection.  
+- **Tracking confidence**: tune for robustness vs responsiveness.  
+- **Smoothing factor**: higher value = smoother but less snappy cursor.  
+- **Frame size / camera resolution**: balance between clarity and FPS.
+
+---
+
+## 🖥 System Requirements
+
+- **OS**: Windows (for full feature set, especially volume control).  
+- **Hardware**:  
+  - Webcam  
+  - Decent CPU for real-time processing  
+- **Software**:  
+  - Python 3.7+  
+  - Good lighting for optimal detection.
+
+---
+
+## 🔐 Limitations
+
+- Works best with **a single hand** visible in the frame.  
+- Volume control currently **Windows-only** (Py caw).  
+- Strong backlight or cluttered backgrounds can reduce accuracy.  
+- Designed for desktop usage, not mobile.
+
+---
+
+## 📌 Future Improvements
+
+- Multi-hand support and multi-user modes.  
+- GUI interface for configuration and gesture visualization.  
+- Mac/Linux-compatible audio control.  
+- Per-user **gesture customization** and profiles.  
+- ML-based gesture learning (train your own gestures).  
+- Improved 2D overlay animations (icons following hand, dynamic UI hints).
+
+---
+
+## 🤝 Contributing
+
 Contributions are welcome.
-Fork the repository and submit a pull request.
 
-👨‍💻 Author
-Developed using OpenCV and MediaPipe to demonstrate real-time AI-based human-computer interaction.
+1. Fork the repo  
+2. Create a feature branch  
+3. Implement your changes  
+4. Add/update relevant documentation  
+5. Open a Pull Request
+
+```bash
+git checkout -b feature/add-custom-gesture
+git commit -m "Add three-finger screenshot gesture"
+git push origin feature/add-custom-gesture
+```
+
+---
+
+## 👨‍💻 Author
+
+Developed using **OpenCV** and **MediaPipe** to demonstrate real-time **AI-based human–computer interaction** through hand gestures and 2D motion control.
+
+<div align="center">
+
+### Wave your hand. Command your system.
+
+</div>
